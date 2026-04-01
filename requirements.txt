@@ -4,5 +4,3 @@ pandas==3.0.2
 plotly==6.3.0
 scikit_learn==1.8.0
 streamlit==1.50.0
-numpy
-scikit-learn
