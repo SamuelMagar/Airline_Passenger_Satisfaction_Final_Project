@@ -6,7 +6,6 @@ import plotly.express as px
 
 st.image('image.jpg')
 st.header('Passenger Satisfaction Prediction')
-page = st.sidebar.radio('Page', ['Data', 'Column overview', 'Analysis','Prediction'])
 @st.cache_data
 def load_data():
     df= pd.read_csv('cleaned_df.csv', index_col=0)
