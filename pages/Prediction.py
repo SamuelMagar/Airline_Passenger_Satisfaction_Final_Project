@@ -7,7 +7,7 @@ from lightgbm import LGBMClassifier
 
 st.image('image.jpg')
 st.header('Passenger Satisfaction Prediction')
-
+page = st.sidebar.radio('Page', ['Data', 'Column overview', 'Analysis','Prediction'])
 #load data
 def load_data():
     df= pd.read_csv('cleaned_df.csv', index_col=0)
@@ -57,10 +57,10 @@ button = st.button('Predict')
 if button == True:
     if result == 1:
         st.success('Passinger is Satisfied')
-        st.write(model.predict_proba(predicted_data).round(3)[0][1])
+        st.write(model.predict_proba(predicted_data).round(3)[0][1]*100)
 
     else:
         st.error('Passenger is Neutral or dissatisfied ')
-        st.write(model.predict_proba(predicted_data).round(3)[0][1])
+        st.write(model.predict_proba(predicted_data).round(3)[0][1]*100)
 
 st.image('letter-logo-aeroplane-icon-transportation-600nw-2504057815.webp')

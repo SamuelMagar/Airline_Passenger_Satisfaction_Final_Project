@@ -7,7 +7,7 @@ st.set_page_config(layout='wide',page_title= 'Airline Passenger Satisfaction')
 
 st.image('image.jpg')
 st.header('Airline Passenger Satisfaction Project')
-
+page = st.sidebar.radio('Page', ['Data', 'Column overview', 'Analysis','Prediction'])
 
 def load_data():
     df= pd.read_csv('cleaned_df.csv', index_col=0)
